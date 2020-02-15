@@ -226,23 +226,23 @@ $nb=0;
 
 	foreach($object->line as $eventday) {
 
-        $date = date_create($eventday->date_event.' '.$eventday->time_start);
+        $date = dol_now();date_create($eventday->date_event.' '.$eventday->time_start);
 
         $societe = new Societe($db);
 		$societe->fetch($eventday->fk_soc);
 		$var = !$var;
 
 		$event->fetch($eventday->fk_event);
-	    $interval_day = $date->getTimestamp() - $today->getTimestamp();
+	    $interval_day = 3600;//$date->getTimestamp() - $today->getTimestamp();
 
 	    //$inter = date_diff($date, $today);
-        $inter = date_diff($today, $date);
+        ///$inter = date_diff($today, $date);
 
     //var_dump($inter->format("%r%a"));
     //var_dump($interval_day);
 	
-	if ($inter->format("%r%a") < 0)
-        continue; //On skip la boucle si l'article est dans le passé.
+	//if ($inter->format("%r%a") < 0)
+       // continue; //On skip la boucle si l'article est dans le passé.
 
 	
 //Pour chaque journée on inscrit dans le groupe choisi

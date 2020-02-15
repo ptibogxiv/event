@@ -791,7 +791,7 @@ else if ($id || !empty($ref)) {
                     }
 
                     $data = array('series' => $dataseries);
-                    dol_print_graph('stats', 300, 180, $data, 1, 'pie', 0);
+                    //dol_print_graph('stats', 300, 180, $data, 1, 'pie', 0);
                     print '</td>';
                     print '</tr>';
                 } else {
